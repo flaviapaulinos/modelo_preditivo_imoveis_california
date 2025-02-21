@@ -12,6 +12,7 @@ install("pyproj")
 install("joblib")
 install("scikit-learn")
 
+sys.path.append("/home/appuser/.local/lib/python3.12/site-packages")
 
 import geopandas as gpd
 import numpy as np
