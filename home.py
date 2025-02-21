@@ -113,8 +113,7 @@ with coluna1:
         
         df_entrada_modelo = pd.DataFrame(entrada_modelo) 
         
-        botao_previsao = st.form_submit_button("Submeter e prever preco")#alteraçãonecessária st.form
-
+        botao_previsao = st.form_submit_button("Submeter e prever preco")
     if botao_previsao:
         preco = modelo.predict(df_entrada_modelo)
         texto_preco = f" | US${preco[0][0]:_.2f}"
@@ -142,8 +141,7 @@ with coluna2:
         get_line_width=500,
         pickable=True,
         auto_highlight=True, 
-        highlighted_color=[255, 255, 0, 100], # Cor de destaque ao passar o mouse (vermelho)
-
+        highlighted_color=[255, 255, 0, 100],
     )
 
   
