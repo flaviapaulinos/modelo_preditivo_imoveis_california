@@ -1,8 +1,10 @@
 import subprocess
 import sys
+import sys
+print(sys.path)
 
 def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", package])
 
 install("geopandas")
 install("shapely")
