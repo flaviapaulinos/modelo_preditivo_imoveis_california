@@ -1,3 +1,14 @@
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install("geopandas")
+install("shapely")
+install("pyproj")
+
+
 import geopandas as gpd
 import numpy as np
 import pandas as pd
