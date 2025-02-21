@@ -76,17 +76,43 @@ gdf_geo=carregar_dados_geo()
 modelo=carregar_modelo()
 
 
-st.title("Previsão de preços de imóveis")
+# Adicionar ícone de casinha ao lado do título
+st.markdown(
+    """
+    <h1 style='display: flex; align-items: center;'>
+        <i class="fas fa-home" style='margin-right: 10px;'></i>
+        Previsão de Preços de Imóveis
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
+# Adicionar o link para o CSS do Font Awesome
+st.markdown(
+    """
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    """,
+    unsafe_allow_html=True
+)
 
 counties = sorted(gdf_geo['name'].unique()) 
 
 coluna1, coluna2 = st.columns(2)
 
 with coluna1: 
+    st.markdown(
+            """
+            <div style='display: flex; align-items: center;'>
+                <i class="fas fa-map-pin" style='margin-right: 10px;'></i>
+                <span>Selecione o Condado</span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     with st.form(key='formulario'):
     
-        selecionar_condado = st.selectbox("Condado", counties)
+        selecionar_condado = st.selectbox("Selecione o Condado", counties)
         
         longitude = gdf_geo.query('name== @selecionar_condado')['longitude'].values
         latitude =  gdf_geo.query('name== @selecionar_condado')['latitude'].values
@@ -97,7 +123,7 @@ with coluna1:
         population = gdf_geo.query('name== @selecionar_condado')['population'].values
         households =  gdf_geo.query('name== @selecionar_condado')['households'].values
         
-        median_income = st.slider("Renda média (em milhares de US$)", 5.0, 100.0, 45.0, 5.0) 
+        median_income = st.slider("Renda média da região (em milhares de US$)", 5.0, 100.0, 45.0, 5.0) 
         
         ocean_proximity = gdf_geo.query('name== @selecionar_condado')['ocean_proximity'].values
         

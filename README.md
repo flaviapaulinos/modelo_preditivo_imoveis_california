@@ -1,11 +1,37 @@
+![Imagem](relatorios/imagens/pexels-brotherkehn-3584437.jpg)
+Photo by KEHN HERMANO: https://www.pexels.com/photo/city-skyline-during-golden-hour-3584437/
+
 # Modelo de regressão para previsão de preços de imóveis no Estado da Califórnia
 
-Origem: https://www.kaggle.com/datasets/camnugent/california-housing-prices/data
+Modelo preditivo para estimar valores de imóveis nos condados da Califórnia, tendo como base dados derivados do censo dos EUA de 1990. Os dados são agrupados em blocos censitários. Um grupo de blocos é a menor unidade geográfica para a qual o Escritório do Censo dos EUA publica dados amostrais (um grupo de blocos geralmente tem uma população de 600 a 3.000 pessoas).
 
-Os dados utilizados nesse projeto foram derivados do censo dos EUA de 1990, usando uma linha por grupo
-de blocos censitários. Um grupo de blocos é a menor unidade geográfica para a qual o
-Escritório do Censo dos EUA publica dados amostrais (um grupo de blocos geralmente tem
-uma população de 600 a 3.000 pessoas).
+A análise exploratória foi dividida em duas etapas:
+
+1 - Tratamento dos dados: Remoção de valores nulos, tratamento de outliers e criação de novas variáveis com base nas existentes, buscando uma melhor correlação com a variável target.
+
+2 - Análise geográfica: Utilização de bibliotecas como seaborn, folium e geopandas para criar mapas e gráficos que facilitam o entendimento e a comparação dos dados.
+
+![Imagem](relatorios/imagens/graficos_comparativos.jpg)
+
+A construção do modelo foi feita gradualmente:
+
+* Análise inicial: Uma análise simples para nortear a construção do modelo.
+
+* Preprocessamento: Aprofundamento no tratamento dos dados.
+
+* Features polinomiais: Teste de features polinomiais para capturar relações não lineares.
+
+* ElasticNet: Uso do ElasticNet para buscar uma solução melhor em relação aos coeficientes.
+
+* Ridge Regression: Escolha final do modelo Ridge como a melhor alternativa.
+
+A escolha final do modelo foi baseada em métricas como RMSE (Root Mean Squared Error) e R² (coeficiente de determinação), garantindo um equilíbrio entre viés e variância para previsões mais precisas.
+
+A aplicação do modelo para a previsão de valores foi feita através do Streamlit, tornando o processo mais simples e intuitivo. O app solicita apenas a inserção do condado, idade do imóvel e renda média da região. Além disso, o app permite a visualização da região em um mapa.
+
+['Previsão de preços de imóveis'](https://exemplocalifornia-fbps.streamlit.app/)
+![Imagem](relatorios/imagens/streamlit.jpg)
+
 
 Clique no botão **Use this template** para criar um novo repositório com base neste modelo.
 
@@ -15,6 +41,7 @@ Clique no botão **Use this template** para criar um novo repositório com base 
 
 ├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git
 ├── ambiente.yml       <- O arquivo de requisitos para reproduzir o ambiente de análise
+├── requirements.txt   <- O arquivo para instalar dependências via pip
 ├── LICENSE            <- Licença de código aberto se uma for escolhida
 ├── README.md          <- README principal para desenvolvedores que usam este projeto.
 |
@@ -29,8 +56,10 @@ Clique no botão **Use this template** para criar um novo repositório com base 
 |   └──src             <- Código-fonte para uso neste projeto.
 |      │
 |      ├── __init__.py  <- Torna um módulo Python
+|      ├── auxiliares.py<- Funções auxiliares do projeto
 |      ├── config.py    <- Configurações básicas do projeto
-|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+|      ├── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+|      └── modelos.py   <- Funções utilizadas no modelo
 |
 ├── referencias        <- Dicionários de dados, manuais e todos os outros materiais explicativos.
 |
