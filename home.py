@@ -9,6 +9,7 @@ def install(package):
 install("geopandas")
 install("shapely")
 install("pyproj")
+install("joblib")
 
 
 import geopandas as gpd
