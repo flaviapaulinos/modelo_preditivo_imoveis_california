@@ -114,3 +114,33 @@ forçadamente um Notebook ao controle de versão, faça um commit forçado com o
 comando `git add --force NOME_DO_ARQUIVO.ipynb`.
 
 Para mais informações sobre como usar Git e GitHub, [clique aqui](https://cienciaprogramada.com.br/2021/09/guia-definitivo-git-github/). Sobre ambientes virtuais, [clique aqui](https://cienciaprogramada.com.br/2020/08/ambiente-virtual-projeto-python/).
+
+![Imagem](relatorios/imagens/pexels-brotherkehn-3584437.jpg)
+
+Regression model for predicting real estate prices in the State of California
+Predictive model for estimating real estate values ​​in California counties, based on data derived from the 1990 US census. The data is grouped into census blocks. A block group is the smallest geographic unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people).
+
+The exploratory analysis was divided into two stages:
+
+1 - Data processing: Removal of null values, treatment of outliers and creation of new variables based on existing ones, seeking a better correlation with the target variable.
+
+2 - Geographic analysis: Use of libraries such as seaborn, folium and geopandas to create maps and graphs that facilitate the understanding and comparison of data.
+
+The model was built gradually:
+
+* Initial analysis: A simple analysis to guide the construction of the model.
+
+* Preprocessing: In-depth data processing.
+
+* Polynomial features: Testing polynomial features to capture non-linear relationships.
+
+* ElasticNet: Using ElasticNet to find a better solution in relation to the coefficients.
+
+* Ridge Regression: Final choice of the Ridge model as the best alternative.
+
+The final choice of the model was based on metrics such as RMSE (Root Mean Squared Error) and R² (coefficient of determination), ensuring a balance between bias and variance for more accurate predictions.
+
+The application of the model to predict values ​​was done through Streamlit, making the process simpler and more intuitive. The app only asks for the input of the county, age of the property and average income of the region. In addition, the app allows the visualization of the region on a map.
+
+['Previsão de preços de imóveis'](https://exemplocalifornia-fbps.streamlit.app/)
+![Imagem](relatorios/imagens/streamlit.jpg)
