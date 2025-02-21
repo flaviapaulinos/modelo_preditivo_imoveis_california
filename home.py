@@ -80,7 +80,7 @@ modelo=carregar_modelo()
 st.markdown(
     """
     <h1 style='display: flex; align-items: center;'>
-        <i class="fas fa-home" style='margin-right: 10px;'></i>
+        <i class="fas fa-home" style='margin-right: 14px;'></i>
         Previsão de Preços de Imóveis
     </h1>
     """,
@@ -100,16 +100,7 @@ counties = sorted(gdf_geo['name'].unique())
 coluna1, coluna2 = st.columns(2)
 
 with coluna1: 
-    st.markdown(
-            """
-            <div style='display: flex; align-items: center;'>
-                <i class="fas fa-map-pin" style='margin-right: 10px;'></i>
-                <span>Selecione o Condado</span>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
+ 
     with st.form(key='formulario'):
     
         selecionar_condado = st.selectbox("Selecione o Condado", counties)
