@@ -1,19 +1,3 @@
-import subprocess
-import sys
-import sys
-print(sys.path)
-
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", package])
-
-install("geopandas")
-install("shapely")
-install("pyproj")
-install("joblib")
-install("scikit-learn")
-
-sys.path.append("/home/appuser/.local/lib/python3.12/site-packages")
-
 import geopandas as gpd
 import numpy as np
 import pandas as pd
@@ -169,7 +153,7 @@ with coluna2:
         'PolygonLayer',
         data=gdf_geo[['name','geometry']],
         get_polygon='geometry', 
-        get_fill_color=[0,128,128,100],
+        get_fill_color=[200, 30, 30, 180],
         get_line_color=[255, 255, 255],
         get_line_width=500,
         pickable=True,

@@ -4,13 +4,12 @@ matplotlib==3.10.0
 numpy==2.2.1
 pandas==2.2.3
 pydeck==0.8.0
-pyproj==3.6.0
+pyproj
 scikit-learn==1.6.1
 scipy==1.14.1
 seaborn==0.13.2
 Shapely==2.0.7
 streamlit==1.42.2
-
 
 
 
